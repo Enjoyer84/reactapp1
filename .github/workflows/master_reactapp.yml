@@ -27,13 +27,13 @@ jobs:
         run: |
           npm ci
           npm run build
-          cp web.config dist/web.config
+          cp web.config build/web.config
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: webapp
-          path: dist
+          path: build
 
   deploy:
     runs-on: ubuntu-latest
